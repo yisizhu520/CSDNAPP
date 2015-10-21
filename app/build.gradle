@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.stevenmoon.csdnapp"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //test
+    testCompile 'junit:junit:4.12'
+    //support
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:design:23.1.0'
+    compile 'com.android.support:recyclerview-v7:23.1.0'
+    //DI
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //UI
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.4'
+    compile 'com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.2'
+    compile 'com.github.orangegangsters:swipy:1.2.0@aar'
+    //MVP
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.0'
+    compile 'com.hannesdorfmann.mosby:viewstate:2.0.0'
+    //
+    compile 'com.github.frankiesardo:icepick:2.3.6'
+    apt 'com.github.frankiesardo:icepick-processor:2.3.6'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.orhanobut:logger:1.8'
+    compile 'com.ogaclejapan.smarttablayout:library:1.4.2'
+}
